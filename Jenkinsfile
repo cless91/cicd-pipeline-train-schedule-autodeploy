@@ -18,10 +18,7 @@ pipeline {
             }
             steps {
                 script {
-                    def app = docker.build(DOCKER_IMAGE_NAME)
-                    app.inside {
-                        sh 'ls'
-                    }
+                    docker.build(DOCKER_IMAGE_NAME)
                 }
             }
         }
